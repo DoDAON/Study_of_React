@@ -1,3 +1,9 @@
+> 이 게시물, 시리즈는 <a href="https://www.yes24.com/product/goods/123904932" target="_blank">소플의 처음 만난 리액트</a>를 보며 공부한 내용을 정리하였습니다. 책 내용을 오롯이 기술하는 것이 아닌 제가 이해한 내용만을 기술하려고 합니다.
+
+<a href="https://github.com/DoDAON/Study_of_React" target="_blank">공부 레포지토리</a>
+
+---
+
 # JSX
 
 리액트는 기본 JS에서 작업하는 것이 아니라 xml 기반 특수 확장자 JSX에서 작업한다. 기본적으로 JSX는 다음과 같이 생겼다.
@@ -95,6 +101,8 @@ function Book(props) {
 export default Book;
 ```
 
+Book 컴포넌트에 props로 name과 numOfPage 설정. div박스로 쌓인 간단한 책 소개 컴포넌트이다.
+
 ## Library.jsx
 ```jsx
 import React from "react";
@@ -112,6 +120,22 @@ function Library(props) {
 }
 
 export default Library;
+```
+
+Book 컴포넌트를 불러오고 props를 맞춰 삽입. 설명할 거 없이 직관적인 간단한 도서관 컴포넌트이다.
+
+## main.jsx
+```jsx
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+
+import Library from './chapter_03/Library.jsx';
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <Library />
+  </StrictMode>,
+)
 ```
 
 전체 완료 후 main.jsx에 Library 컴포넌트를 넣어 최종 출력
